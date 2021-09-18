@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('ilindex.html')
+    return render_template('index.html')
 @app.route('/prediction', methods = ['POST'])
 def prediction():
     Index = request.form['Index']
@@ -26,6 +26,6 @@ def prediction():
     else :
         prediction="The loanee is not a defaulter"
 
-    return render_template('ilindex.html', api_output=prediction)
-
-app.run(debug=True)
+    return render_template('index.html', api_output=prediction)
+if __name__ == '__main__':
+    app.run(debug=True)

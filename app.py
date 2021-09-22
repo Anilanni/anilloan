@@ -16,7 +16,7 @@ def home():
     return render_template('index.html')
 @app.route('/prediction', methods = ['POST'])
 def prediction():
-    
+    Index = request.form['Applicant no.']
     Employed = request.form['Employed']
     AnnualSalary = request.form['Annual Salary']
     BankBalance =  request.form['Bank Balance']

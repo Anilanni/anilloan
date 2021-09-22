@@ -22,9 +22,9 @@ def prediction():
     BankBalance =  request.form['Bank Balance']
     prediction= loadedModel.predict([[Index,Employed,BankBalance,AnnualSalary]])[0]
     if prediction == 0:
-        prediction="The loanee is defaulter"
+        prediction="Not eligible for the loan"
     else :
-        prediction="The loanee is not a defaulter"
+        prediction="Eligible for the loan"
 
     return render_template('index.html', api_output=prediction)
 if __name__ == '__main__':
